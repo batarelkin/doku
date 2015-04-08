@@ -17,7 +17,6 @@ public class ApplicationListener implements ServletContextListener {
 
   @Override
   public void contextInitialized(ServletContextEvent arg0) {
-    System.out.println(testObjectStorage);
     AC.get().registerService(ITestObjectStorage.class, testObjectStorage);
   }
 
