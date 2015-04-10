@@ -1,7 +1,5 @@
 package com.example.doku.engine.services.hibernate.beans;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,9 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "test_object")
-public class TestObjectBean implements Serializable {
-
-  private static final long serialVersionUID = 1L;
+public class TestObjectBean {
 
   @Id
   @GeneratedValue
