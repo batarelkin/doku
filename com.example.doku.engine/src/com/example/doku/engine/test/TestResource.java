@@ -9,7 +9,7 @@ import com.example.doku.model.TestObject;
 import com.example.webcore.application.AC;
 import com.example.webcore.storage.StorageException;
 
-@Path("/v1")
+@Path("/v1/test")
 public class TestResource implements ITestResource {
 
   @Override

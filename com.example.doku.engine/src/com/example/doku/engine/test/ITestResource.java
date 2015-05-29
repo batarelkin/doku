@@ -12,7 +12,7 @@ import com.example.webcore.storage.StorageException;
 public interface ITestResource {
 
   @GET
-  @Path("/test/{tid}")
+  @Path("/{tid}")
   @Produces({MediaType.APPLICATION_JSON})
   public Response getTestObjectResource(@PathParam("tid") int testObjectId) throws StorageException;
 

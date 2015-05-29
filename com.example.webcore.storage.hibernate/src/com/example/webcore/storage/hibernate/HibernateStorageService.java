@@ -6,6 +6,7 @@ import java.util.logging.Logger;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.FlushModeType;
 
 import com.example.webcore.storage.IStorageService;
 import com.example.webcore.storage.StorageException;
@@ -14,7 +15,7 @@ import com.example.webcore.storage.StorageStatus;
 /**
  * Хранилище в базе даных с использованием Hibernate
  */
-public class HibernateStorageService implements IStorageService, IHibernateStorageService {
+public abstract class HibernateStorageService implements IStorageService, IHibernateStorageService {
 
   protected static final Logger LOG = Logger.getLogger(HibernateStorageService.class.getName());
 
@@ -79,6 +80,7 @@ public class HibernateStorageService implements IStorageService, IHibernateStora
       @Override
       public void run(IStorageSession session) throws Exception {
         EntityManager em = ((HibernateStorageSession) session).getEntityManager();
+        em.setFlushMode(FlushModeType.AUTO);
         runnable.run(em);
       }
     });
